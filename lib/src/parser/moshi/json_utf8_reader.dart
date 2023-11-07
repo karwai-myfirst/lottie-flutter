@@ -784,11 +784,6 @@ class JsonUtf8Reader extends JsonReader {
           'Expected an int but was $_peekedString  at path ${getPath()}');
     }
     result = asDouble.toInt();
-    if (result != asDouble) {
-      // Make sure no precision was lost casting to 'int'.
-      throw JsonDataException(
-          'Expected an int but was $_peekedString at path ${getPath()}');
-    }
     _peekedString = null;
     _peeked = peekedNone;
     pathIndices[stackSize - 1]++;
